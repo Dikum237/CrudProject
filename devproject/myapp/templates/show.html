@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+  
+{% block title %}Employee Records{% endblock title %}
+  
+{% block content %}
+ <div class="col-md-12">
+        <span>&emsp;&emsp;&emsp;</span> 
+        <div class="table-responsive">
+        <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+
+        <thead>
+            <!-- <th><input type="checkbox" id="checkall" /></th>
+            <th>ID</th> -->
+            <th scope="col">Health facility</th>
+            <th scope="col">Worker Health name</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Patient ID</th>
+            <!--<th>Date of birth</th>-->
+            <th scope="col">Country </th>
+            <th scope="col">Region </th>
+            <th scope="col">District </th>
+            <th scope="col">Sexe </th>
+            <th scope="col">Village </th>
+            <th scope="col">Phone Number  </th>
+            <th scope="col">Occupation </th>
+            <th scope="col">Landmark </th>
+            <th scope="col">Contact person  </th>
+           <!-- <th>Contact person Phone number  </th>-->
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </thead>
+        <tbody>
+        {% for employee in employees %}  
+            <tr>  
+            <!-- <td><input type="checkbox" class="checkthis" /></td>
+            <td>{{ employee.id }}</td> -->
+            <td>{{ employee.Health_facility }}</td>  
+            <td>{{ employee.worker_health_name }}</td>  
+            <td>{{ employee.patient_name }}</td>  
+            <td>{{employee.patient_ID}}</td>
+            <!--<td>{{employee.Date_of_birth}}</td>-->
+            <td>{{employee.Country}}</td>
+            <td>{{employee.Region}}</td>
+            <td>{{employee.District}}</td>
+            <td>{{employee.sexe}}</td>
+            <td>{{employee.Village}}</td>
+            <td>{{employee.Phone_number}}</td>
+            <td>{{employee.Occupation}}</td>
+            <td>{{employee.Landmark}}</td>
+            <td>{{employee.Contact_person}}</td>
+           <!-- <td>{{employee.Contact_person_phone}}</td>-->
+            <td><a href="/edit/{{ employee.id }}" class="btn btn-primary">Edit</a></td>
+            <td><a href="/delete/{{ employee.id }}" class="btn btn-danger" onclick="return confirm('Do you really want to delete this item!')" href="/delete/{{ employee.id }}">Delete</a></td>  
+            </tr>  
+
+            <div class="modal fade" id="employeeModel{{employee.id}}" aria-hidden="true" aria-labelledby="employeeModalToggleLabel" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <div>
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Are you sure, you want to delete {{employee.patient_name}}'s detail ?</h1>
+                        <ul class="list-inline text-end">
+                            <li class="list-inline-item">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </li>
+                            <li class="list-inline-item">
+                               
+                                <a href="/delete/{{ employee.id }}/" class="btn btn-danger">Delete</a>
+                            </li>
+                          </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+        {% endfor %} 
+        </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock content %}

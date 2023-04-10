@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+  
+{% block title %}Add New Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/update/{{employee.id}}">  
+    {% csrf_token %}  
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update Details</h3>  
+        </div> 
+
+
+
+
+
+        
+        <div class="mb-3"> 
+            <label>Employee ID:</label>  
+            <input type="text" class="form-control" name="id" id="id_id" required maxlength="50" value="{{ employee.id }}"/>    
+        </div> 
+        <!--<div class="mb-3"> 
+            <label>Date Record:</label>  
+            <input type="text" class="form-control" name="date_enregistrement" id="id_date_enregistrement" required maxlength="150" value="{{ employee.date_enregistrement }}" />  
+        </div> -->
+        <div class="mb-3"> 
+            <label>HEALTH FACILITY:</label>  
+            <input type="text" class="form-control" name="Health_facility" id="id_Health_facility" required maxlength="150" value="{{ employee.Health_facility }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>WORKER HEALTH NAME:</label>  
+            <input type="text" class="form-control" name="worker_health_name" id="id_worker_health_name" required maxlength="150" value="{{ employee.worker_health_name }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>PATIENT NAME :</label>  
+            <input type="text" class="form-control" name="patient_name" id="id_patient_name" required maxlength="150" value="{{ employee.patient_name }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>PATIENT ID :</label>  
+            <input type="text" class="form-control" name="patient_ID" id="id_patient_ID" required maxlength="50" value="{{ employee.patient_ID }}" />  
+        </div> 
+
+        <div class="mb-3"> 
+            <label>DATE OF BIRTH:</label>  
+            <input type="text" class="form-control" name="Date_of_birth" id="id_Date_of_birth" required maxlength="15" value="{{ employee.Date_of_birth }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>COUNTRY:</label>  
+            <input type="text" class="form-control" name="Country" id="id_Country" required maxlength="100" value="{{ employee.Country }}" />  
+        </div> 
+
+        <div class="mb-3"> 
+            <label>REGION:</label>  
+            <input type="text" class="form-control" name="Region" id="id_Region" required maxlength="20" value="{{ employee.Region }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>DISTRICT:</label>  
+            <input type="text" class="form-control" name="District" id="id_District" required maxlength="40" value="{{ employee.District }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>SEXE:</label>  
+            <input type="text" class="form-control" name="sexe" id="id_sexe" required maxlength="8" value="{{ employee.sexe }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>VILLAGE:</label>  
+            <input type="text" class="form-control" name="Village" id="id_Village" required maxlength="150" value="{{ employee.Village }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>PHONE NUMBER :</label>  
+            <input type="text" class="form-control" name="Phone_number" id="id_Phone_number" required maxlength="15" value="{{ employee.Phone_number }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>OCCUPATION:</label>  
+            <input type="text" class="form-control" name="Occupation" id="id_Occupation" required maxlength="150" value="{{ employee.Occupation }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>LANDMARK:</label>  
+            <input type="text" class="form-control" name="Landmark" id="id_Landmark" required maxlength="150" value="{{ employee.Landmark }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CONTACT PERSON :</label>  
+            <input type="text" class="form-control" name="Contact_person" id="id_Contact_person" required maxlength="250" value="{{ employee.Contact_person }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CONTACT PERSON PHONE NUMBER :</label>  
+            <input type="text" class="form-control" name="Contact_person_phone" id="id_Contact_person_phone" required maxlength="15" value="{{ employee.Contact_person_phone }}" />  
+        </div> 
+
+
+
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-success btn-lg">Update</button>  
+        </div> 
+    </div>  
+    </form>  
+{% endblock content %}   

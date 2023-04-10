@@ -1,0 +1,77 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head> 
+
+<meta charset="UTF-8">  
+<title>{% block title %}{% endblock %}</title>
+{% load static %}  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+<link rel = "stylesheet" type = "text/css" href = "https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href= "static/CSS/base.css">
+</head> 
+<body>
+   
+
+   <style>
+      body {
+        background-color:#b0adaf;
+      }
+      </style>
+      
+<div class="container">
+ <div class="row">
+  
+   <div class=" titre">
+    <div class="Entête">
+    <div class="TITRE">
+   <!-- <img src="static/img/ban6.png">
+    </div>
+
+    <img src="static/img/logo1.png">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <p></p>-->
+    <span style="font-family:Trebuchet MS; color:#181866;"><h1> BURULI  ULCER  DATA  COLLECTION  FORM</h1> </div>
+    </span>
+    </div>
+   
+    
+    
+
+      <div class="NAVBAR">
+        <nav class="navbar bg-body-tertiary">
+          <form class="container-fluid justify-content-start">
+            
+            <p class="NAVBAR1">
+            <span><a href="/show" class="btn btn-primary">Show Table</a></span>
+            </p>
+            <p>&emsp;&emsp;&emsp;
+            <span><a href="/addnew" class="btn btn-primary">Add New Record</a></span>
+            <!--<button class="btn btn-sm btn-outline-secondary" type="button">View Data </button>-->
+            </p>
+          </form>
+        </nav>
+      </div>
+      <p></p>
+      
+   
+    {% block content %}{% endblock %}
+   </div>
+ </div>
+</div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src = "https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#bootstrapdatatable').DataTable({     
+      "aLengthMenu": [[ 20, 50, 300, -1], [3, 5, 10, 25, "All"]],
+        "iDisplayLength": 20
+       } 
+    );
+} );
+</script>
+</body> 
+
+</html>

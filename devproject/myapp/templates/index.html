@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css
+
+Jquery
+https://jquery.com/download/
+CDN : jsDelivr CDN
+https://www.jsdelivr.com/package/npm/jquery
+https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
+
+https://datatables.net/
+DataTables is a powerful jQuery plugin for creating table listings and adding interactions to them. It provides searching, sorting and pagination without any configuration.
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+{% block title %}Add New Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">    
+    <form method="POST" class="post-form" action="/addnew">  
+        {% csrf_token %}  
+        <link rel="stylesheet" href= "static/CSS/base.css"> 
+                <div class="container"> 
+                                <div class="col-12">  
+                                <h3 class="form-title">Enter Details</h3>  
+                                </div>  
+                                <p class="TESTONS">
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; Skin NTDs clinical and Treatment form&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+                                    </button>
+                                </p>
+                            <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                    <div class="main-user-info">
+                                            <div class="user-input-box">
+                                            <label>HEALTH FACILITY :</label>  
+                                            {{ form.Health_facility }}   
+                                            </div> 
+
+                                            <div  class="user-input-box"> 
+                                            <label>WORKER HEALTH NAME:</label>  
+                                            {{ form.worker_health_name }}   
+                                            </div> 
+
+                                            <div class="user-input-box"> 
+                                            <label>PATIENT NAME:</label>  
+                                                {{ form.patient_name }} 
+                                            </div> 
+                                            
+                                            <div class="user-input-box"> 
+                                            <label>PATIENT ID :</label>  
+                                                {{ form.patient_ID }}   
+                                            </div>
+
+                                            <div class="user-input-box"> 
+                                            <label>DATE OF BIRTH:</label>  
+                                                {{ form.Date_of_birth }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                            <label>COUNTRY:</label>
+                                                {{ form.Country }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>REGION :</label>
+                                                {{ form.Region }}
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>DISTRICT:</label>
+                                                {{ form.District}}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>VILLAGE:</label>
+                                                {{ form.Village}}
+                                            </div>  
+                                            <div class="user-input-box"> 
+                                                <label>SEXE:</label>
+                                                {{ form.sexe }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>PHONE NUMBER:</label>
+                                                {{ form.Phone_number }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>OCCUPATION:</label>
+                                                {{ form.Occupation }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>LANDMARK :</label>
+                                                {{ form.Landmark }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>CONTACT PERSON :</label>
+                                                {{ form.Contact_person }}   
+                                            </div>
+                                            <div class="user-input-box"> 
+                                                <label>CONTACT PERSON PHONE NUMBER :</label>
+                                                {{ form.Contact_person_phone }}   
+                                            </div>                       
+                                    </div>
+                            </div>
+                            </div>
+                         <!--c'est la deuxieme partie de notre formulaire ici
+                         -->
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;History at Admission&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </h1>
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                <div class="card card-body"> 
+                                <p>
+                                    <div class="user-Partie-deux">
+                                
+                                            <div class="user-input-para" style="width:200px;">
+                                                <label>Mode of detection </label>
+                                                {{ form.detection_mode }}
+                                            </div> 
+                                            
+                                            <div class="user-input-para">
+                                                <label>Other mode of detection </label>
+                                                {{ form.other_mode_detection }}
+                                            </div> 
+                                            <div class="user-input-para" style="width:220px;">
+                                                <label>Classification</label>
+                                                {{ form.classification }}
+                                            </div>
+                                           
+                                            <div class="user-input-para" style="width:200px;">
+                                                <label>Traditional Treatment  </label>
+                                                    {{ form.use_traditional }}
+                                            </div>
+                                            <div class="user-input-para">
+                                                <label>Duration of Ilness (Weeks) </label>
+                                                    {{ form.duration_illnes }}
+                                            </div>
+                                            
+                                            <div class="user-input-para" style="width:300px;">
+                                                <label>Any Treatment or Current  </label>
+                                                    {{ form.any_treat }}
+                                            </div>
+                                            <div class="user-input-para">
+                                                <label>Specify Any Treatment  </label>
+                                                    {{ form.specify_any_treatment }}
+                                            </div>
+                                            <div class="user-input-para">
+                                                <label>Duration (days)  </label>
+                                                    {{ form.duration_any}}
+                                            </div>
+                                    </div>    
+                              
+                                </p>
+
+
+                                <p>
+                                    <div class="user-sousPartie-deux">
+                                    
+                                        <div class="user-input-para1"style="width:350px;">
+                                            <label>Family  Contact with similar Lesion  </label>
+                                                {{ form.Family_member }}
+                                        </div>
+                                        <div class="user-input-para1">
+                                            <label>Number</label>
+                                                {{ form.number_family_close}}
+                                        </div>
+                                        <div class="user-input-para1">
+                                            <label>Relationship</label>
+                                                {{ form.relationship}}
+                                        </div>
+                                        <div class="user-input-para1">
+                                            <label>Diagnosis</label>
+                                                {{ form.diagnosis}}
+                                        </div>
+                                        <div class="user-input-para1"style="width:300px;">
+                                            <label>Treatment for Previous </label>
+                                                {{ form.treat_prev }}
+                                        </div>
+
+                                        <div class="user-input-para1">
+                                            <label>Specify previous Treatment</label>
+                                                {{ form.specify_for_previous }}
+                                        </div>
+
+                                        <div class="user-input-para1">
+                                            <label>Durations (days) </label>
+                                                {{ form.duration_for_previous }}
+                                        </div>
+                                        <div class="user-input-para1">
+                                            <label>Referred By </label>
+                                                {{ form.Referred_by }}
+                                        </div>
+                                       
+                                        <div class="user-input-para1" style="width:300px;">
+                                            <label>Other Referred </label>
+                                            {{ form.other_referred }}
+                                        </div>
+                                    </div>    
+                                </p>
+                                    
+                                </div>   
+                                </div> 
+
+ <!--c'est la Troisieme  partie de notre formulaire ici-->
+                             
+                            <p>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;INITIAL CLINICAL DIAGNOSIS&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                            <div class="card card-body"> 
+                                            <div class="user-Partie-deux">
+                                                            <div class="user-input-box">
+                                                                <label>Date enregistrement:</label>
+                                                                    {{ form.date_enregistrement }}
+                                                            </div>
+
+                                                            <div class="user-input-box">
+                                                                <label>Weigth (Kg):</label>
+                                                                    {{ form.weigth }}
+                                                            </div>
+                                                            <div class="user-input-box" >
+                                                                <label>Pregnant:</label>
+                                                                    {{ form.pregnant }}
+                                                            </div>
+                                                            <div class="user-input-box" style="width:300px;">
+                                                                <label>HIV status:</label>
+                                                                    {{form.HIV_status}}
+                                                            </div>
+
+                                                            <div class="user-input-box" style="width:300px;">
+                                                                <label>TB status:</label>
+                                                                    {{form.TB_status}}
+                                                            </div>
+                                                            <div class="user-input-box" style="width:300px;">
+                                                                <label>Limitation of movement:</label>
+                                                                    {{ form.limitation_mov}}
+                                                            </div>
+                                                            <div class="user-input-box" style="width:300px;">
+                                                                <label>Limitation of daily activities:</label>
+                                                                    {{ form.limitation_daily_act}}
+                                                            </div>                                   
+                                                            <div class="user-input-box">
+                                                                <label>No of lesions :</label>
+                                                                    {{ form.no_lesions}}
+                                                            </div>
+                                                            <div class="user-input-box">
+                                                                <label>Diameter of biggest lesions  :</label>
+                                                                    {{ form.diameter}}
+                                                            </div> 
+                                                            <div class="user-input-box">
+                                                                    <label> Category :</label>
+                                                                    {{form.category_lesion}}                        
+                                                            </div>   &nbsp; &nbsp;  &nbsp;
+                                                            
+                                                            
+                                                    <p>
+                                                    <div class="user-sousPartie-deux">
+                                                    
+                                                    <div class= "user-input-box2">
+                                                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Clinical Form
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                <input type="checkbox" value="Nodule" class="chkvalues">Nodule<br/>
+                                                                <input type="checkbox" value="Papule" class="chkvalues">Papule <br/>
+                                                                <input type="checkbox" value="Ulcere" class="chkvalues">Ulcere <br/>
+                                                                <input type="checkbox" value="Oedema" class="chkvalues">Oedema<br/>
+                                                                <input type="checkbox" value="Oesteomyelitis" class="chkvalues">Oesteomyelitis <br/>
+                                                                </div>
+                                                                <input type="text" id="txtdisplay" readonly name="Clininical_form" required style="width:300px;"/>                                                     
+                                                    </div>
+                                                            <script>
+                                                                $(document).ready(function()
+                                                                    {
+                                                                        $('.chkvalues').click(function()
+                                                                        {
+                                                                            var txt=""
+                                                                            $('.chkvalues:checked').each (function()
+                                                                            {
+                                                                                txt+=$(this).val()+",";
+                                                                            });
+                                                                            txt=txt.substring(0,txt.length-1);
+                                                                            $('#txtdisplay').val(txt);
+                                                                        });
+                                                                });
+                                                            </script> 
+                                                    <div class="user-input-box2">
+                                                                    
+                                                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        Location of Lesion
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                    <input type="checkbox" value="Abdomen" class="chkvalues1">Nodule<br/>
+                                                                    <input type="checkbox" value="Back" class="chkvalues1">Papule <br/>
+                                                                    <input type="checkbox" value="Breast" class="chkvalues1">Ulcere <br/>
+                                                                    <input type="checkbox" value="Buttocks and Perineum" class="chkvalues1">Oedema<br/>
+                                                                    <input type="checkbox" value="Eye" class="chkvalues1">Eye <br/>
+                                                                    <input type="checkbox" value="Genitalia" class="chkvalues1">Genitalia <br/>
+                                                                    <input type="checkbox" value="Head and Neck" class="chkvalues1">Head and Neck<br/>
+                                                                    <input type="checkbox" value="Inguinal/Groin" class="chkvalues1">Inguinal/Groin <br/>
+                                                                    <input type="checkbox" value="Lowe Limb" class="chkvalues1">Lowe Limb <br/>
+                                                                    <input type="checkbox" value="Thorax" class="chkvalues1">Thorax <br/>
+                                                                    <input type="checkbox" value="Upper limb" class="chkvalues1">Upper limb <br/>
+                                                                    </div>
+                                                                    <input type="text" id="txt1display" readonly name="Location_lesion" required style="width:300px;"/>                                                        
+                                                    </div>
+                                                                <script>
+                                                                    $(document).ready(function()
+                                                                        {
+                                                                            $('.chkvalues1').click(function()
+                                                                            {
+                                                                                var txt=""
+                                                                                $('.chkvalues1:checked').each (function()
+                                                                                {
+                                                                                    txt+=$(this).val()+",";
+                                                                                });
+                                                                                txt=txt.substring(0,txt.length-1);
+                                                                                $('#txt1display').val(txt);
+                                                                            });
+                                                                    });
+                                                             </script> 
+                                                    </div>
+                                                    </p> 
+                                                    
+                                                    
+                                                    
+                                            </div>
+                                            </div>
+                            </div>   
+
+                            
+                    
+                    
+
+                    
+
+
+                </div>
+
+                
+            <div class="mb-3"> 
+                    <button type="submit" class="btn btn-primary">Submit</button> 
+            </div>
+        
+    </form>  
+</div>        
+
+{% endblock content %}
+
